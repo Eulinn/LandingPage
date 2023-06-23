@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Manrope:wght@200;300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+:root {
+  --Fundo: #1f1f1f;
+  --FundoEscuro: #131313;
+  --Verde: #26bb98;
+  --VerdeTransparent1: rgba(38, 187, 152, 0.20);
+  --Cinza: #323232;
+}
+
+body,
+html {
+  width: 100vw;
+  height: 100vh;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: scroll;
+
+  background-color: var(--Fundo);
+}
+
+#root::-webkit-scrollbar {
+  width: 10px;
+}
+
+#root::-webkit-scrollbar-track {
+  background: transparent; /* color of the tracking area */
+}
+
+#root::-webkit-scrollbar-thumb {
+  background-color: grey; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid #1e1e1e; /* creates padding around scroll thumb */
+}
+

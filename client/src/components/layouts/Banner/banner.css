@@ -1,0 +1,450 @@
+.ContainerBanner{
+    position: relative;
+    width: 100%;
+
+    /* background-color: red; */
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+.Detail{
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    background-color: transparent;
+    border-radius: 100%;
+
+    box-shadow: 0 0 500px 200px var(--VerdeTransparent1);
+
+    transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out ;
+    -webkit-transition:  .5s ease-in-out;
+
+}
+
+
+.Detail1{
+    top: 40%;
+}
+
+
+
+
+
+
+
+.ContentBanner{
+    flex: 1;
+
+    height: auto;
+
+    /* background-color: green; */
+    padding-bottom: 80px;
+    display: flex;
+
+    border-bottom: 2px solid var(--Verde);
+}
+
+
+
+.TextBanner{
+    position: relative;
+    flex: 1;
+    padding-top: 40px;
+
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    animation: Opac .7s ease-in-out forwards;
+
+}
+
+.TitleBanner{
+    max-width: 550px;
+    /* background-color: yellow; */
+    margin: 20px 0;
+
+    color: white;
+    font-weight: bold;
+    font-size: 2.3rem;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+}
+
+.PhraseBanner{
+    max-width: 550px;
+    /* background-color: yellow; */
+    margin: 10px 0;
+
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.563);
+
+    font-family: 'Inter', sans-serif;
+}
+
+
+.ButtonsBanner{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    display: flex;
+    
+    justify-content: flex-end;
+    align-items: center;
+
+    /* background-color: yellow; */
+}
+
+
+.Button1{
+    position: relative;
+    background-color: var(--FundoEscuro);
+
+    font-family: 'Inter', sans-serif;
+
+
+    padding: 5px 30px 5px 16px;
+    border-radius: 50px;
+
+    font-size: 1.3rem;
+    color: white;
+
+    border: 0;
+}
+
+.Button1::before{
+    position: absolute;
+    content: '';
+
+    right: 0;
+    top: 0;
+
+    width: 10%;
+    height: 100%;
+
+    border-radius: 50px;
+
+
+    background-color: var(--FundoEscuro);
+
+    transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out ;
+    -webkit-transition:  1s ease-in-out;
+
+}
+
+
+.PressableButton1{
+
+    position: absolute;
+
+    font-family: 'Manrope', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+
+    font-size: 2rem;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 100%;
+
+    top: 50%;
+    right: 0;
+
+    transform: translateY(-50%) translateX(50%);
+
+    background-color: var(--Verde);
+    cursor: pointer;
+
+    transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    -moz-transition:.3s ease-in-out ;
+    -webkit-transition: .3s ease-in-out;
+}
+
+.PressableButton1:hover{
+    box-shadow: 0 0 20px var(--VerdeTransparent1);
+
+}
+
+.PressableButton1 span{
+    transform: translateY(-4px);
+}
+
+
+.Hidding::before{
+    width: 100%;
+
+}
+
+
+.Passing{
+    translate: -280px;
+
+
+    transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out ;
+    -webkit-transition:  1s ease-in-out;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Button2{
+    background-color: var(--Fundo);
+    border: 2px solid var(--Verde);
+    border-radius: 4px;
+
+    padding: 7px 18px;
+
+    font-size: 1.3rem;
+    color: white;
+
+    margin: 0 30px;
+    box-shadow: 0 0 20px var(--VerdeTransparent1);
+
+    cursor: pointer;
+
+}
+
+
+.Button3{
+    background-color: var(--Verde);
+    border: 2px solid var(--Verde);
+
+    border-radius: 4px;
+
+    padding: 7px 18px;
+
+    font-size: 1.3rem;
+    color: white;
+
+    box-shadow: 0 0 10px var(--Verde);
+
+    cursor: pointer;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ImagesBanner{
+    flex: 1;
+    padding-top: 40px;
+
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+.CodeSpacing{
+    position: relative;
+    width: clamp(550px,60%, 700px);
+    min-height: 200px;
+    margin: 20px 0;
+    padding: 5px 0;
+
+    border-radius: 10px;
+    border: 3px solid var(--Verde);
+
+    box-shadow: 0 0 20px var(--VerdeTransparent1);
+
+
+    background-color: transparent;
+
+    display: flex;
+
+    animation: Opac 1s ease-in-out forwards;
+}
+
+
+.CodeSpacing::before{
+    position: absolute;
+    content: '';
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 100%;
+    box-shadow: 0 0 20px var(--Verde);
+
+    translate: 50% -50%;
+
+    right: 0;
+
+    background-color: var(--Verde);
+}
+
+
+.CodeLines{
+    width: 20px;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    list-style-type: none;
+}
+
+.CodeLines li{
+    margin: 2px 0;
+
+    font-family: 'Inter';
+    color: #7E8481;
+}
+
+
+.CodeLinesScript{
+    list-style-type: none;
+
+    flex: 1;
+    padding-left: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.CodeLinesScript li{
+    margin: 2px 0;
+
+    font-family: 'Inter';
+    color: white;
+}
+
+.ident1{
+    padding-left: 30px;
+}
+.ident2{
+    padding-left: 60px;
+}
+
+
+.LineAmarela{
+    color: #FFDE59;
+}
+
+
+.LineAzulEscuro{
+    color: #2646B1;
+}
+
+.LineAzulClaro{
+    color: #8AD5FB;
+}
+
+.LineMarrom{
+    color: #C88F6C;
+}
+
+.LineVerde{
+    color: #00BF63;
+}
+
+.LineRoxa{
+    color: #B0677C;
+}
+
+.LineCinza{
+    color: #7e848140;
+}
+
+
+
+
+
+
+
+.WorksBanner{
+    flex: 1;
+    padding: 20px 0;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.WorksBanner p{
+    font-size: 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+
+    color: white;
+}
+
+.WorksBanner ul{
+    list-style-type: none;
+    display: flex;
+    margin: 20px 0 10px;
+}
+
+.WorksBanner ul li{
+    margin: 0 30px;
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+    opacity: 0.3;
+
+    cursor: pointer;
+}
+
+
+@keyframes Opac {
+    0%{
+        opacity: 0;
+    }100%{
+        opacity: 1;
+    }
+}
+

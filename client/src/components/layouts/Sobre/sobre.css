@@ -1,0 +1,381 @@
+.Sobre {
+  width: 100%;
+
+  background-color: var(--Fundo);
+}
+
+.Invertido {
+  flex-direction: row-reverse;
+}
+
+.ContentSobre {
+  width: 100%;
+  padding: 100px 0;
+
+  display: flex;
+}
+
+.ImageSobre {
+  flex: 1;
+  height: 500px;
+  /* background-color: green; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.CircleImageSobre {
+  position: relative;
+  width: 450px;
+  height: 450px;
+
+  border-radius: 100%;
+
+  border: 2px solid var(--Verde);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ImageDeitada {
+  width: 340px;
+  height: 450px;
+
+  background-color: #6c6c6c;
+  border-radius: 12px;
+
+  transform: skew(10deg);
+  box-shadow: -16px 15px 5px 0px #00000040;
+}
+
+.ImgInvert {
+  transform: skew(-10deg);
+}
+
+.ContIcon {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+
+  background-color: var(--Verde);
+  box-shadow: -6px 7px 4px 0px #000000c8;
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 5rem;
+
+  color: rgba(0, 0, 0, 0.881);
+}
+
+.ContIconsPos1 {
+  top: -70px;
+  left: -130px;
+}
+
+.ContIconsPos2 {
+  top: 0;
+  right: -80px;
+}
+
+.ContIconsPos3,
+.ContIconsPosInvert3 {
+  bottom: -70px;
+}
+
+.ContIconsPosInvert1 {
+  top: -70px;
+  right: -130px;
+}
+
+.ContIconsPosInvert2 {
+  top: 0;
+  left: -80px;
+}
+
+.TextContentSobre {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.TitleSobre {
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  font-size: 1.9rem;
+  color: white;
+}
+
+.TextSobre {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 1.1rem;
+  max-width: 550px;
+  text-align: center;
+
+  opacity: 0.5;
+
+  color: white;
+  margin: 20px 0;
+}
+
+.Icon {
+  width: 90px;
+  height: 90px;
+
+  background-color: var(--Cinza);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 3rem;
+  color: #6c6c6c;
+}
+
+.ColumnVideo,
+.ColumnServices {
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+  margin: 50px 0;
+}
+
+.TitleGeral {
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  font-size: 2.4rem;
+  text-align: center;
+
+  color: white;
+}
+
+.ContentVideo {
+  flex: 1;
+  /* background-color: red; */
+
+  display: flex;
+}
+
+.LocalVideo {
+  flex: 2.5;
+  /* background-color: green; */
+
+  padding: 20px;
+}
+
+.AtualVideo {
+  width: 90%;
+  height: 400px;
+  border-radius: 12px;
+  border: 2px solid white;
+
+  background-color: grey;
+}
+
+.ScrollVideo {
+  flex: 1;
+
+  max-height: 600px;
+
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  gap: 20px;
+
+  overflow-y: scroll;
+}
+
+.ScrollVideo::-webkit-scrollbar {
+  width: 10px;
+}
+
+.ScrollVideo::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+.ScrollVideo::-webkit-scrollbar-thumb {
+  background-color: grey; 
+  border-radius: 20px; 
+  border: 3px solid #1e1e1e;
+}
+
+
+.MiniVideo{
+    width: 95%;
+    min-height: 170px;
+
+    background-color: grey;
+    border-radius: 12px;
+
+    border: 2px solid white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.LocalVideo p {
+  width: 90%;
+  font-family: "Space Grotesk";
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: white;
+}
+
+.LocalVideo button {
+  background-color: var(--Verde);
+  padding: 8px;
+  border-radius: 4px;
+  font-family: "Space Grotesk";
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  margin: 20px 0;
+}
+
+.ContainerVideo {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  margin: 20px 0;
+
+  width: 70%;
+  height: auto;
+
+  background-color: #00000099;
+  box-shadow: 0 13px 24px #00000080;
+  border-radius: 16px;
+}
+
+.LinuxDetail {
+  width: 100%;
+  min-height: 60px;
+
+  border-bottom: 1px solid white;
+
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.LinuxDetail li {
+  margin: 0 5px;
+
+  width: 22px;
+  height: 22px;
+
+  border-radius: 100%;
+}
+
+.LinuxDetail li:nth-child(1) {
+  background-color: #ff5f5a;
+}
+
+.LinuxDetail li:nth-child(2) {
+  background-color: #ffbe2e;
+}
+
+.LinuxDetail li:nth-child(3) {
+  background-color: #2aca44;
+}
+
+.Detail2 {
+  top: 0;
+  right: 0;
+}
+
+.Detail3 {
+  top: 100%;
+  left: 0;
+}
+
+.Services {
+  width: 100%;
+  padding: 40px 0;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.ItemService {
+  width: 400px;
+  height: 400px;
+
+  border-radius: 12px;
+
+  border: 2px solid var(--Verde);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.IconService {
+  flex: 1;
+  max-height: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--Verde);
+  font-size: 6rem;
+
+}
+
+.ContentService {
+  flex: 1;
+}
+
+.ServiveTitle {
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: white;
+  text-align: center;
+
+  padding: 0 40px;
+}
+
+.ServiceText {
+  font-family: "Inter";
+  font-weight: 300;
+  font-size: 1rem;
+  text-align: justify;
+
+  opacity: 0.5;
+
+  color: white;
+  margin: 20px 0;
+  padding: 0 40px;
+}
+
+.Carroussel {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
