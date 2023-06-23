@@ -15,7 +15,7 @@ export default class Heart extends React.Component {
           opacity="0.1"
           d="M682 2L922 252.056L644 523.531H255.5L2 252.056L235.5 2L469 252.056L682 2Z"
           stroke="var(--Verde)"
-          stroke-width="2"
+          strokeWidth="2"
         />
       </svg>
     );

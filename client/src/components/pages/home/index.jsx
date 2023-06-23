@@ -3,12 +3,31 @@ import Banner from "../../layouts/Banner";
 import Header from "../../layouts/Header";
 import Sobre from "../../layouts/Sobre";
 
+import CodeSpacing1 from "../../layouts/CodesSpacings/CodeSpacing1";
+import CodeSpacing2 from "../../layouts/CodesSpacings/CodeSpacing2";
+import CodeSpacing3 from "../../layouts/CodesSpacings/CodeSpacing3";
+import CodeSpacing4 from "../../layouts/CodesSpacings/CodeSpacing4";
+
 export default class Home extends React.Component {
   constructor() {
     super();
     this.state = {
       Changed: false,
-      Text: 'Sou um desenvolvedor de software em constante crescimento, dedicado a aprimorar minhas habilidades de programação. Tenhoexpertise na criação de sites que oferecem uma experiência digitalexcepcional e funcionalidade eficiente. Além disso, construoaplicativos de desktop e desenvolvo scripts para automação eanálise de dados, utilizando linguagens como HTML, CSS, JavaScripte frameworks como React e PyQt à PySide. Estou sempre buscandoaprender e me atualizar para fornecer soluções digitais de altaqualidade, automatizando processos e maximizando a eficiência parameus clientes.'
+      Euler: {
+        Slogan: "Os melhores scripts para suas aplicações web e desktop",
+        Text: "Sou um desenvolvedor de software em constante crescimento, dedicado a aprimorar minhas habilidades de programação. Tenho expertise na criação de sites que oferecem uma experiência digital excepcional e funcionalidade eficiente. Além disso, construo aplicativos de desktop e desenvolvo scripts para automação e análise de dados, utilizando linguagens como HTML, CSS, JavaScripte frameworks como React e PyQt à PySide. Estou sempre buscando aprender e me atualizar para fornecer soluções digitais de altaqualidade, automatizando processos e maximizando a eficiência parameus clientes.",
+        ToChangeText: "Conheça mais de design",
+        CodeSpacings: [<CodeSpacing1 />, <CodeSpacing2 />],
+        Persons: ["Pandoo", "Maiara", "Thaiane"],
+      },
+
+      Luiz: {
+        Slogan: "Transformando suas ideias em uma experiencia incrivel",
+        Text: "Como Ui e Ux Designer, meu foco está em criar experiências digitais intuitivas e envolventes. Através de pesquisa, prototipagem e testes, busco encontrar o equilíbrio perfeito entre estética visual e funcionalidade, visando proporcionar aos usuários uma interação fluída e satisfatória com os produtos e serviços digitais. Meu objetivo é criar designs impactantes que melhoram a vida das pessoas e deixam uma marca positiva no mundo digital.",
+        ToChangeText: "Conheça mais de scripts",
+        CodeSpacings: [<CodeSpacing3 />, <CodeSpacing4 />],
+        Persons: ["Bigou Delivery", "Euler", "Gays"],
+      },
     };
   }
 
@@ -30,33 +49,28 @@ export default class Home extends React.Component {
     );
   };
 
-  ChangeBanner = () => {
-    if (this.state.Changed) {
-      return (
-        <Banner
-        Changing={this.ChangePerson}
-        Changed={this.state.Changed}
-        slogan={"Transformando suas ideias em uma experiencia incrivel"}
-        Text={''}
-      />
-      );
-    }
-    return (
-      <Banner
-        Changing={this.ChangePerson}
-        Changed={this.state.Changed}
-        slogan={"Os melhores scripts para suas aplicações web e desktop"}
-        Text={this.state.Text}
-      />
-    );
-  };
-
   render() {
     return (
       <>
         <Header Changed={this.state.Changed} />
-        {this.ChangeBanner()}
-        <Sobre />
+        {this.state.Changed ? (
+          <Banner
+            Changing={this.ChangePerson}
+            Changed={this.state.Changed}
+            Person={this.state.Luiz}
+          />
+        ) : (
+          <Banner
+            Changing={this.ChangePerson}
+            Changed={this.state.Changed}
+            Person={this.state.Euler}
+          />
+        )}
+        {this.state.Changed ? (
+          <Sobre Changed={this.state.Changed} Person={this.state.Luiz}/>
+        ) : (
+          <Sobre Changed={this.state.Changed} Person={this.state.Euler} />
+        )}
       </>
     );
   }

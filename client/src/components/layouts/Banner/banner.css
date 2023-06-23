@@ -317,11 +317,16 @@
     border-radius: 100%;
     box-shadow: 0 0 20px var(--Verde);
 
-    translate: 50% -50%;
+    translate: 50% -75%;
 
     right: 0;
 
     background-color: var(--Verde);
+}
+
+
+.CodeSpacing img{
+    width: 100%;
 }
 
 

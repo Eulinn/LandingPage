@@ -13,7 +13,31 @@
   padding: 100px 0;
 
   display: flex;
+  
+  animation: Opac 1s ease-in-out forwards;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .ImageSobre {
   flex: 1;
@@ -128,7 +152,7 @@
   width: 90px;
   height: 90px;
 
-  background-color: var(--Cinza);
+  background-color: var(--Preto);
   border-radius: 12px;
   display: flex;
   justify-content: center;
