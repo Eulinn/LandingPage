@@ -2,10 +2,13 @@ import React from "react";
 import "./sobre.css";
 import Carroussel from "../carroussel";
 
-import { BsPersonFill } from "react-icons/bs";
+import { BsPersonFill, BsGithub } from "react-icons/bs";
 import { BiBuildings } from "react-icons/bi";
 import { MdTouchApp } from "react-icons/md";
 import Trabalhos from "../Trabalhos";
+import Pandoo from "../Trabalhos/Pandoo";
+import Maiara from "../Trabalhos/Maiara";
+import Thaiane from "../Trabalhos/Thaiane";
 
 
 export default class Sobre extends React.Component {
@@ -17,10 +20,43 @@ export default class Sobre extends React.Component {
   }
 
 
+  ChangeStage = () =>{
+    if(this.props.Changed){
+      return
+    }
+
+    if(!this.state.Stage){
+      return <Trabalhos />
+    }
+
+    if(this.state.Stage === 1){
+        return <Pandoo Func={this.ReturnStage} />
+    }
+
+    if(this.state.Stage === 2){
+      return <Maiara Func={this.ReturnStage} />
+
+    }
+
+    if(this.state.Stage === 3){
+      return <Thaiane Func={this.ReturnStage} />
+
+    }
+
+
+  }
+
+
+  ReturnStage = async () =>{
+    await this.setState({Stage: 0})
+
+  }
+
+
 
   render() {
     return (
-      <div className="Sobre">
+      <div className="Sobre" id="Sobre">
         <div className="WorksBanner">
           <p>Com quem já trabalhei</p>
           <ul>
@@ -35,7 +71,9 @@ export default class Sobre extends React.Component {
           </ul>
         </div>
 
-        <Trabalhos Stage={this.state.Stage} Changed={this.props.Changed}/>
+        {this.ChangeStage()}
+
+
 
         <div className="ContentSobre ColumnVideo">
           <span className="Detail Detail2"></span>
@@ -55,7 +93,7 @@ export default class Sobre extends React.Component {
                   Para acessar o {"{Nome Projeto}"} completo, use o link do
                   botão abaixo!
                 </p>
-                <button>Acessar</button>
+                <button><BsGithub /> Acessar</button>
               </div>
               <div className="ScrollVideo">
                 <div className="MiniVideo"></div>
@@ -131,7 +169,7 @@ export default class Sobre extends React.Component {
           </div>
         </div>
 
-        <div className="ContentSobre Carroussel">
+        <div className="ContentSobre Carroussel" id='Depoimentos'>
           <p className="TitleGeral">
             O que as pessoas que eu já trabalhei falam de mim
           </p>

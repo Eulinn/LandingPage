@@ -22,8 +22,8 @@ export default class Header extends react.Component {
           )}
         </div>
         <ul className="HeaderMenu">
-          <li>Contato</li>
-          <li>Sobre</li>
+          <a href="#Contato"><li>Contato</li></a>
+          <a href="#Sobre"><li>Sobre</li></a>
         </ul>
         <div className="HeaderButton">
           <button

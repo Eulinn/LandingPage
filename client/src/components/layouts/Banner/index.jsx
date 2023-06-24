@@ -48,7 +48,7 @@ export default class Banner extends react.Component {
               <button className="Button2" onClick={()=>{
                   window.open("https://eulinn.github.io/portfolio/", '_blank')
               }}>Portfolio</button>
-              <button className="Button3">Depoimentos</button>
+              <a href="#Depoimentos"><button className="Button3">Depoimentos</button></a>
             </div>
           </div>
           <div className="ImagesBanner">

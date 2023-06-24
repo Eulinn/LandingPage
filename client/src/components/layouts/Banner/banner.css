@@ -442,8 +442,17 @@
     opacity: 0.3;
 
     cursor: pointer;
+
+    transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out ;
+    -webkit-transition:  .3s ease-in-out;
 }
 
+.WorksBanner ul li:hover{
+    opacity: 1;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.664);
+}
 
 @keyframes Opac {
     0%{

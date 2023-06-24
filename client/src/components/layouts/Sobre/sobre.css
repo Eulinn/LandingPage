@@ -13,31 +13,49 @@
   padding: 100px 0;
 
   display: flex;
-  
+
   animation: Opac 1s ease-in-out forwards;
 }
 
+.ReturnHome {
+  width: 100%;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.ReturnHome button {
+  background-color: var(--Verde);
+  box-shadow: 0px 4px 88px var(--Verde);
 
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: "Space Grotesk";
+  color: var(--Fundo);
 
+  border-radius: 55px;
+  border: 0;
+  padding: 8px 39px 8px 39px;
 
+  cursor: pointer;
 
+  transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+}
+.ReturnHome button:hover {
+  box-shadow: 0px 0px 0;
+}
 
+.IconContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+  gap: 20px;
+}
 
 .ImageSobre {
   flex: 1;
@@ -70,7 +88,11 @@
   border-radius: 12px;
 
   transform: skew(10deg);
+
   box-shadow: -16px 15px 5px 0px #00000040;
+
+  background-size: cover;
+  background-position: center;
 }
 
 .ImgInvert {
@@ -208,7 +230,6 @@
 
   max-height: 600px;
 
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -223,36 +244,24 @@
 }
 
 .ScrollVideo::-webkit-scrollbar-track {
-  background: transparent; 
+  background: transparent;
 }
 
 .ScrollVideo::-webkit-scrollbar-thumb {
-  background-color: grey; 
-  border-radius: 20px; 
+  background-color: grey;
+  border-radius: 20px;
   border: 3px solid #1e1e1e;
 }
 
+.MiniVideo {
+  width: 95%;
+  min-height: 170px;
 
-.MiniVideo{
-    width: 95%;
-    min-height: 170px;
+  background-color: grey;
+  border-radius: 12px;
 
-    background-color: grey;
-    border-radius: 12px;
-
-    border: 2px solid white;
+  border: 2px solid white;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 .LocalVideo p {
   width: 90%;
@@ -271,6 +280,21 @@
   font-weight: 700;
   color: white;
   margin: 20px 0;
+  border: 0;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+}
+
+.LocalVideo button:hover {
+  box-shadow: 0 0 14px var(--Verde);
 }
 
 .ContainerVideo {
@@ -364,7 +388,6 @@
 
   color: var(--Verde);
   font-size: 6rem;
-
 }
 
 .ContentService {

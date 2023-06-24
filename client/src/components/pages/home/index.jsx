@@ -7,6 +7,7 @@ import CodeSpacing1 from "../../layouts/CodesSpacings/CodeSpacing1";
 import CodeSpacing2 from "../../layouts/CodesSpacings/CodeSpacing2";
 import CodeSpacing3 from "../../layouts/CodesSpacings/CodeSpacing3";
 import CodeSpacing4 from "../../layouts/CodesSpacings/CodeSpacing4";
+import Footer from "../../layouts/footer";
 
 export default class Home extends React.Component {
   constructor() {
@@ -71,6 +72,7 @@ export default class Home extends React.Component {
         ) : (
           <Sobre Changed={this.state.Changed} Person={this.state.Euler} />
         )}
+        <Footer Changed={this.state.Changed} />
       </>
     );
   }

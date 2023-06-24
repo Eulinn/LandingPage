@@ -15,6 +15,10 @@
   --Verde: #26bb98;
   --VerdeTransparent1: rgba(38, 187, 152, 0.20);
   --Cinza: #323232;
+
+  --MBColor: #826661;
+  --PandooColor: #FFB30E;
+  --TataColor: #ffcc29;
 }
 
 body,
@@ -33,6 +37,9 @@ html {
   overflow-y: scroll;
 
   background-color: var(--Fundo);
+
+  scroll-behavior: smooth;
+
 }
 
 #root::-webkit-scrollbar {
@@ -49,3 +56,6 @@ html {
   border: 3px solid #1e1e1e; /* creates padding around scroll thumb */
 }
 
+a{
+  text-decoration: none;
+}
