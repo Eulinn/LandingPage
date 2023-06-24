@@ -27,7 +27,7 @@ export default class Home extends React.Component {
         Text: "Como Ui e Ux Designer, meu foco está em criar experiências digitais intuitivas e envolventes. Através de pesquisa, prototipagem e testes, busco encontrar o equilíbrio perfeito entre estética visual e funcionalidade, visando proporcionar aos usuários uma interação fluída e satisfatória com os produtos e serviços digitais. Meu objetivo é criar designs impactantes que melhoram a vida das pessoas e deixam uma marca positiva no mundo digital.",
         ToChangeText: "Conheça mais de scripts",
         CodeSpacings: [<CodeSpacing3 />, <CodeSpacing4 />],
-        Persons: ["Bigou Delivery", "Euler", "Gays"],
+        Persons: ["Bigou Delivery"],
       },
     };
   }

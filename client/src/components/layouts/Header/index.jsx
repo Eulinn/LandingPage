@@ -1,6 +1,8 @@
 import react from "react";
 import "./header.css";
 
+import { LuAlignJustify } from "react-icons/lu";
+
 export default class Header extends react.Component {
   render() {
     return (
@@ -22,20 +24,32 @@ export default class Header extends react.Component {
           )}
         </div>
         <ul className="HeaderMenu">
-          <a href="#Contato"><li>Contato</li></a>
-          <a href="#Sobre"><li>Sobre</li></a>
+          <a href="#Contato">
+            <li>Contato</li>
+          </a>
+          <a href="#Sobre">
+            <li>Sobre</li>
+          </a>
         </ul>
         <div className="HeaderButton">
           <button
             onClick={() => {
               window.open(
-                `https://api.whatsapp.com/send?phone=${this.props.Changed ? 32999550240 : 32999266247}`,
+                `https://api.whatsapp.com/send?phone=${
+                  this.props.Changed ? 32999550240 : 32999266247
+                }`,
                 "_blank"
               );
             }}
           >
             Whatsapp
           </button>
+        </div>
+
+        <div className="MobileMenu">
+          <p>
+            <LuAlignJustify />
+          </p>
         </div>
       </div>
     );

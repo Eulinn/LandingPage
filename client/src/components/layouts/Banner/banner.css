@@ -50,14 +50,17 @@
     display: flex;
 
     border-bottom: 2px solid var(--Verde);
+
 }
 
 
 
 .TextBanner{
+    min-width: 520px;
     position: relative;
     flex: 1;
-    padding-top: 40px;
+    padding: 40px 0;
+
 
     /* background-color: blue; */
     display: flex;
@@ -72,7 +75,7 @@
 .TitleBanner{
     max-width: 550px;
     /* background-color: yellow; */
-    margin: 20px 0;
+    margin: 20px;
 
     color: white;
     font-weight: bold;
@@ -85,7 +88,7 @@
 .PhraseBanner{
     max-width: 550px;
     /* background-color: yellow; */
-    margin: 10px 0;
+    margin: 10px 20px;
 
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.563);
@@ -99,6 +102,8 @@
     bottom: 0;
     width: 100%;
 
+    padding: 20px 0;
+
     display: flex;
     
     justify-content: flex-end;
@@ -108,7 +113,7 @@
 }
 
 
-.Button1{
+.Button1, .Button1Mobile{
     position: relative;
     background-color: var(--FundoEscuro);
 
@@ -124,7 +129,7 @@
     border: 0;
 }
 
-.Button1::before{
+.Button1::before, .Button1Mobile::before{
     position: absolute;
     content: '';
 
@@ -146,8 +151,13 @@
 
 }
 
+.Button1Mobile{
+    max-width: 350px;
+    display: none;
+}
 
-.PressableButton1{
+
+.PressableButton1, .PressableButton1Mobile{
 
     position: absolute;
 
@@ -178,12 +188,12 @@
     -webkit-transition: .3s ease-in-out;
 }
 
-.PressableButton1:hover{
+.PressableButton1:hover, .PressableButton1Mobile:hover{
     box-shadow: 0 0 20px var(--VerdeTransparent1);
 
 }
 
-.PressableButton1 span{
+.PressableButton1 span, .PressableButton1Mobile span{
     transform: translateY(-4px);
 }
 
@@ -288,10 +298,11 @@
 
 .CodeSpacing{
     position: relative;
-    width: clamp(550px,60%, 700px);
+    width: clamp(400px,80%, 700px);
     min-height: 200px;
     margin: 20px 0;
     padding: 5px 0;
+
 
     border-radius: 10px;
     border: 3px solid var(--Verde);
@@ -300,6 +311,7 @@
 
 
     background-color: transparent;
+
 
     display: flex;
 
@@ -461,4 +473,42 @@
         opacity: 1;
     }
 }
+
+
+
+
+
+
+
+@media screen and (max-width:1024px){
+    .ContentBanner{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .TextBanner, .ImagesBanner{
+        min-width: 100%;
+    }
+
+    .Button1{
+        display: none;
+    }
+
+    .TitleBanner, .PhraseBanner{
+        text-align: center;
+
+    }
+
+    .ButtonsBanner{
+        position: relative;
+        justify-content: center;
+    }
+
+    .Button1Mobile{
+        display: flex;
+    }
+}
+
+
+
 

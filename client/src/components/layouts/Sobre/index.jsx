@@ -9,6 +9,8 @@ import Trabalhos from "../Trabalhos";
 import Pandoo from "../Trabalhos/Pandoo";
 import Maiara from "../Trabalhos/Maiara";
 import Thaiane from "../Trabalhos/Thaiane";
+import LuizHome from "../Trabalhos/LuizHome";
+import Layout from "../../assets/SVG/Layout";
 
 
 export default class Sobre extends React.Component {
@@ -22,7 +24,9 @@ export default class Sobre extends React.Component {
 
   ChangeStage = () =>{
     if(this.props.Changed){
-      return
+      
+      return <LuizHome />
+
     }
 
     if(!this.state.Stage){
@@ -166,6 +170,26 @@ export default class Sobre extends React.Component {
                 </p>
               </div>
             </div>
+            
+            <div className="ItemService" style={{display:this.props.Changed ? "flex" : 'none'}}>
+              <div className="IconService">
+                <Layout />
+              </div>
+              <div className="ContentService">
+                <p className="ServiveTitle">
+                Templates para perfis do Instagram
+                </p>
+                <p className="ServiceText">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Necessitatibus, esse ab! Repellendus maiores hic molestias
+                  consectetur eligendi laborum architecto, fugit voluptatum
+                  consequatur accusamus minus. Perferendis consequuntur ipsam
+                  labore possimus sint.
+                </p>
+              </div>
+            </div>
+
+
           </div>
         </div>
 
