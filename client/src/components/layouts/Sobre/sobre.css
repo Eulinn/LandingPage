@@ -296,7 +296,12 @@
   border-radius: 12px;
   border: 2px solid white;
 
-  background-color: grey;
+  background-color: rgba(128, 128, 128, 0.566);
+
+
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .ScrollVideo {
@@ -315,8 +320,7 @@
 }
 
 .ScrollVideo::-webkit-scrollbar {
-  width: 10px;
-
+  height: 10px;
 }
 
 .ScrollVideo::-webkit-scrollbar-track {
@@ -327,17 +331,33 @@
 .ScrollVideo::-webkit-scrollbar-thumb {
   background-color: grey;
   border-radius: 20px;
-  border: 3px solid #1e1e1e;
+  border: 3px solid var(--Preto);
 }
 
 .MiniVideo {
   width: 95%;
   min-height: 170px;
 
-  background-color: grey;
+  background-color: rgba(128, 128, 128, 0.566);
   border-radius: 12px;
 
   border: 2px solid white;
+
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+
+  transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+
+}
+
+.MiniVideo:hover{
+  background-size: 150%;
 }
 
 .MobileTitle{
@@ -464,8 +484,11 @@
 }
 
 .ItemService {
-  width: 400px;
+  width: 30%;
   min-height: 400px;
+  max-height: 500px;
+
+  padding: 20px 0;
 
   border-radius: 12px;
 
@@ -488,6 +511,8 @@
 
 .ContentService {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .ServiveTitle {
@@ -522,6 +547,40 @@
   flex-direction: column;
   align-items: center;
 }
+
+
+.ContainerFeedbacks{
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  max-height: 700px;
+  overflow-y: scroll;
+
+  padding: 0 20px 40px 30px;
+  gap: 20px;
+
+}
+
+
+
+
+.ContainerFeedbacks::-webkit-scrollbar {
+  width: 10px;
+
+}
+
+.ContainerFeedbacks::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+.ContainerFeedbacks::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 20px;
+  border: 3px solid #1e1e1e;
+}
+
+
 
 
 
@@ -582,6 +641,20 @@
 
 
 
+
+  .Services{
+    display: none;
+  }
+
+  .ContainerCarrossel{
+    display: none !important;
+  }
+
+
+  .ContainerFeedbacks{
+    display: flex;
+  }
+
 }
 
 
@@ -592,6 +665,7 @@
 @media screen and (max-width:600px){
   .WorksBanner ul li{
     font-size: 1.9rem;
+    margin: 0 25px;
   }
 
 
@@ -636,6 +710,49 @@
 
     width: 70vw;
     height: 70vw;
+  }
+
+  .Services{
+    display: flex;
+  }
+
+  .ItemService{
+    width: 90%;
+    flex-direction: row;
+
+    min-height: 200px;
+  }
+
+  .ServiveTitle{
+    padding: 0 10px;
+  }
+
+  .ContentService{
+    justify-content: center;
+    align-items: center;
+  }
+
+  .IconService{
+    max-height: 100%;
+    max-width: 30%;
+    font-size: 4.5rem;
+  }
+
+  .ServiceText{
+    display: none;
+  }
+
+  .ContainerFeedbacks{
+    padding: 0 10px 40px 20px;
+
+  }
+}
+
+
+@media screen and (max-width:490px){
+  .WorksBanner ul li{
+    font-size: 1.7em;
+    margin: 0 10px;
   }
   
 }

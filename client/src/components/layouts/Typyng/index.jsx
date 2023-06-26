@@ -15,7 +15,7 @@ const ExampleComponent = () => {
       ]}
       wrapper="span"
       speed={50}
-      style={{ color: '#7e848140',}}
+      style={{ color: "#7e848190",}}
       repeat={Infinity}
     />
   );

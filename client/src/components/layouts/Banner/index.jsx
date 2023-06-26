@@ -72,7 +72,7 @@ export default class Banner extends react.Component {
                       );
                 }}
               >
-                Portfolio
+                Portfólio
               </button>
               <a href="#Depoimentos">
                 <button className="Button3">Depoimentos</button>

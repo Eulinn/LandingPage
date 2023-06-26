@@ -11,19 +11,71 @@ import Maiara from "../Trabalhos/Maiara";
 import Thaiane from "../Trabalhos/Thaiane";
 import LuizHome from "../Trabalhos/LuizHome";
 import Layout from "../../assets/SVG/Layout";
+import ServiceCarrossel from "../ServicesCarrossel";
+
+import { RiWhatsappFill } from "react-icons/ri";
+import Karol from "../../assets/img/Karol.jpg";
+
+import Arduino from "../../assets/img/Arduino.png";
+import CodeSnap from "../../assets/img/CodeSnap.png";
+import Fisica from "../../assets/img/fisica.webp";
 
 export default class Sobre extends React.Component {
   constructor() {
     super();
     this.state = {
       Stage: 0,
+      GapTablet: 64,
+      CarrousesselTablet: false,
+      CurrentTitle: String,
+      CurrentLink: String,
+      CurrentImage: null,
+      Projetos: {
+        el: [
+          {
+            title: "Efeito Digitar",
+            image: CodeSnap,
+            link: "https://github.com/Eulinn/Pythons",
+          },
+          {
+            title: "Arduino - PySide6 Pydracula",
+            image: Arduino,
+            link: "https://github.com/Eulinn/Ardu-no",
+          },
+          {
+            title: "Fórmulas",
+            image: Fisica,
+            link: "https://github.com/Eulinn/Formulas",
+          },
+        ],
+        lz: [
+          
+        ],
+      },
     };
   }
+  
+  FirsImpres = () =>{
+    if (this.props.Changed) {
+      this.setState({ CurrentTitle: this.state.Projetos?.lz[0]?.title });
+      this.setState({ CurrentLink: this.state.Projetos?.lz[0]?.link });
+      this.setState({ CurrentImage: this.state.Projetos?.lz[0]?.image });
+
+      return
+    }
+    this.setState({ CurrentTitle: this.state.Projetos?.el[0]?.title });
+    this.setState({ CurrentLink: this.state.Projetos?.el[0]?.link });
+    this.setState({ CurrentImage: this.state.Projetos?.el[0]?.image });
+  }
+
+
 
   ChangeStage = () => {
     if (this.props.Changed) {
+
       return <LuizHome />;
     }
+
 
     if (!this.state.Stage) {
       return <Trabalhos />;
@@ -45,6 +97,34 @@ export default class Sobre extends React.Component {
   ReturnStage = async () => {
     await this.setState({ Stage: 0 });
   };
+
+  componentDidMount() {
+    const FirstImpress = async () => {
+      if (window.innerWidth <= 1024 && window.innerWidth >= 600) {
+        await this.setState({ CarrousesselTablet: true });
+        await this.setState({ GapTablet: (64 * window.innerWidth) / 1200 });
+        return;
+      }
+
+      await this.setState({ CarrousesselTablet: false });
+    };
+
+    FirstImpress();
+
+    window.addEventListener("resize", async (event) => {
+      if (window.innerWidth <= 1024 && window.innerWidth >= 600) {
+        await this.setState({ CarrousesselTablet: true });
+        await this.setState({ GapTablet: (64 * window.innerWidth) / 1200 });
+
+        return;
+      }
+
+      await this.setState({ CarrousesselTablet: false });
+    });
+
+      this.FirsImpres();
+    
+  }
 
   render() {
     return (
@@ -84,31 +164,61 @@ export default class Sobre extends React.Component {
 
             <div className="ContentVideo">
               <div className="LocalVideo">
-                <div className="AtualVideo"></div>
+                <div
+                  className="AtualVideo"
+                  style={{ backgroundImage: `url(${this.state.CurrentImage})` }}
+                ></div>
                 <p>
-                  Para acessar o {"{Nome Projeto}"} completo, use o link do
-                  botão abaixo!
+                  Para acessar o {this.state.CurrentTitle} completo, use o link
+                  do botão abaixo!
                 </p>
-                <button>
+                <button
+                  onClick={() => {
+                    window.open(this.state.CurrentLink, "_blank");
+                  }}
+                >
                   <BsGithub /> Acessar
                 </button>
               </div>
               <div className="ScrollVideo">
-                <div className="MiniVideo"></div>
-                <div className="MiniVideo"></div>
-                <div className="MiniVideo"></div>
-                <div className="MiniVideo"></div>
-                <div className="MiniVideo"></div>
-                <div className="MiniVideo"></div>
-                <div className="MiniVideo"></div>
-                <div className="MiniVideo"></div>
+                {this.props.Changed
+                  ? this.state.Projetos?.lz?.map((item) => {
+                      return (
+                        <div
+                          className="MiniVideo"
+                          style={{ backgroundImage: `url(${item?.image})` }}
+                          onClick={async () => {
+                            await this.setState({ CurrentTitle: item?.title });
+                            await this.setState({ CurrentLink: item?.link });
+                            await this.setState({ CurrentImage: item?.image });
+                          }}
+                        ></div>
+                      );
+                    })
+                  : this.state.Projetos?.el?.map((item) => {
+                      return (
+                        <div
+                          className="MiniVideo"
+                          style={{ backgroundImage: `url(${item?.image})` }}
+                          onClick={async () => {
+                            await this.setState({ CurrentTitle: item?.title });
+                            await this.setState({ CurrentLink: item?.link });
+                            await this.setState({ CurrentImage: item?.image });
+                          }}
+                        ></div>
+                      );
+                    })}
               </div>
               <div className="MobileTitle">
                 <p>
-                  Para acessar o {"{Nome Projeto}"} completo, use o link do
-                  botão abaixo!
+                  Para acessar o projeto {this.state.CurrentTitle} completo, use
+                  o link do botão abaixo!
                 </p>
-                <button>
+                <button
+                  onClick={() => {
+                    window.open(this.state.CurrentLink, "_blank");
+                  }}
+                >
                   <BsGithub /> Acessar
                 </button>
               </div>
@@ -129,11 +239,13 @@ export default class Sobre extends React.Component {
                   serviços
                 </p>
                 <p className="ServiceText">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Necessitatibus, esse ab! Repellendus maiores hic molestias
-                  consectetur eligendi laborum architecto, fugit voluptatum
-                  consequatur accusamus minus. Perferendis consequuntur ipsam
-                  labore possimus sint.
+                  Eu ofereço serviços abrangentes para empresas que desejam ter
+                  um site e aplicativos personalizados para potencializar seus
+                  serviços. Com minha experiência em desenvolvimento web e de
+                  aplicativos, posso criar soluções sob medida que atendam às
+                  necessidades exclusivas da sua empresa. Seja para um site
+                  corporativo informativo, um e-commerce funcional ou um
+                  aplicativo interativo.
                 </p>
               </div>
             </div>
@@ -147,11 +259,13 @@ export default class Sobre extends React.Component {
                   Pessoas que querem ter seu site próprio
                 </p>
                 <p className="ServiceText">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Necessitatibus, esse ab! Repellendus maiores hic molestias
-                  consectetur eligendi laborum architecto, fugit voluptatum
-                  consequatur accusamus minus. Perferendis consequuntur ipsam
-                  labore possimus sint.
+                  Crio sites personalizados para pessoas que desejam ter sua
+                  presença online única. Com minha experiência em design web e
+                  desenvolvimento de sites, posso criar um site sob medida para
+                  você, refletindo sua identidade e atendendo às suas
+                  necessidades específicas. Desde blogs pessoais a portfólios
+                  profissionais, posso criar um site que transmita sua mensagem
+                  de forma eficaz e atraente.
                 </p>
               </div>
             </div>
@@ -165,11 +279,13 @@ export default class Sobre extends React.Component {
                   Empresas que queiram ter automações e agilidade
                 </p>
                 <p className="ServiceText">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Necessitatibus, esse ab! Repellendus maiores hic molestias
-                  consectetur eligendi laborum architecto, fugit voluptatum
-                  consequatur accusamus minus. Perferendis consequuntur ipsam
-                  labore possimus sint.
+                  Scripts personalizados para empresas que buscam automação e
+                  agilidade em seus processos. Com minha experiência em
+                  programação e conhecimento das melhores práticas empresariais,
+                  posso desenvolver scripts eficientes e personalizados que
+                  ajudarão a otimizar tarefas e aumentar a produtividade. Seja
+                  para automatizar o envio de e-mails, gerar relatórios
+                  automáticos ou simplificar fluxos de trabalho complexos.
                 </p>
               </div>
             </div>
@@ -186,22 +302,103 @@ export default class Sobre extends React.Component {
                   Templates para perfis do Instagram
                 </p>
                 <p className="ServiceText">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Necessitatibus, esse ab! Repellendus maiores hic molestias
-                  consectetur eligendi laborum architecto, fugit voluptatum
-                  consequatur accusamus minus. Perferendis consequuntur ipsam
-                  labore possimus sint.
+                  Crio templates personalizados para perfis do Instagram,
+                  oferecendo um design bonito e atraente. Com minha experiência
+                  em design gráfico, posso criar templates exclusivos que
+                  ajudarão a destacar o seu perfil. Seja para influenciadores,
+                  marcas ou indivíduos que desejam transmitir uma imagem
+                  profissional e elegante, meus templates são projetados para se
+                  adaptarem perfeitamente ao estilo e à identidade visual de
+                  cada cliente.
                 </p>
               </div>
             </div>
           </div>
+
+          {this.state.CarrousesselTablet ? (
+            <ServiceCarrossel
+              Gap={this.state.GapTablet}
+              Changed={this.props.Changed}
+            />
+          ) : null}
         </div>
 
-        <div className="ContentSobre Carroussel" id="Depoimentos">
+        <div className="ContentSobre Carroussel" id="Depoimentos" style={{display:'none'}}>
           <p className="TitleGeral">
             O que as pessoas que eu já trabalhei falam de mim
           </p>
+
           <Carroussel />
+
+          <div className="ContainerFeedbacks">
+            <div className="ItemSlider">
+              <div className="WhatsIcons">
+                <span className="WhatsIcon">
+                  <RiWhatsappFill />
+                </span>
+              </div>
+              <div className="PerfilSlider">
+                <div
+                  className="PhotoPerfilSlider"
+                  style={{ backgroundImage: `url(${Karol})` }}
+                ></div>
+                <div className="ContentPerfilSlider">
+                  <p className="NamePerfilSlider">Karolayne Campos</p>
+                  <p className="CargoPerfilSlider">Estudante</p>
+                </div>
+              </div>
+
+              <div className="Feedback">
+                Fiquei impressionada com a capacidade de resolver problemas
+                complexos de uma forma tão ágil e eficiente, demonstrando que
+                realmente domina o que faz, assim como, um alto nível de
+                profissionalismo e comprometimento. Além do mais, sempre cumpriu
+                os prazos estabelecidos, entregando um trabalho de alta
+                qualidade dentro do tempo previsto e sempre me consultando para
+                saber se eu estava gostando ou não. A dedicação do programador
+                em adquirir novas habilidades e estar atualizado com as últimas
+                tendências tecnológicas é admirável. Sua busca contínua pelo
+                aprimoramento pessoal e profissional reflete em seu trabalho de
+                qualidade.
+              </div>
+            </div>
+
+            <div className="ItemSlider" >
+              <div className="WhatsIcons">
+                <span className="WhatsIcon">
+                  <RiWhatsappFill />
+                </span>
+              </div>
+              <div className="PerfilSlider">
+                <div
+                  className="PhotoPerfilSlider"
+                  style={{ backgroundImage: `url(${Karol})` }}
+                ></div>
+                <div className="ContentPerfilSlider">
+                  <p className="NamePerfilSlider">Karolayne Campos</p>
+                  <p className="CargoPerfilSlider">Estudante</p>
+                </div>
+              </div>
+
+              <div className="Feedback">
+                Fiquei impressionada com a capacidade de resolver problemas
+                complexos de uma forma tão ágil e eficiente, demonstrando que
+                realmente domina o que faz, assim como, um alto nível de
+                profissionalismo e comprometimento. Além do mais, sempre cumpriu
+                os prazos estabelecidos, entregando um trabalho de alta
+                qualidade dentro do tempo previsto e sempre me consultando para
+                saber se eu estava gostando ou não. A dedicação do programador
+                em adquirir novas habilidades e estar atualizado com as últimas
+                tendências tecnológicas é admirável. Sua busca contínua pelo
+                aprimoramento pessoal e profissional reflete em seu trabalho de
+                qualidade.
+              </div>
+            </div>
+
+            <div className="ReturnHome">
+              <button>Carregar Mais...</button>
+            </div>
+          </div>
         </div>
       </div>
     );

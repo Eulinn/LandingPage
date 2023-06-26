@@ -20,14 +20,13 @@ export default class Footer extends React.Component {
 
         <p className="TitleGeral">A procura deste serviço?</p>
         <p className="TextSobre">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-          quae doloremque deserunt neque obcaecati? Ipsum iure reiciendis,
-          laborum temporibus blanditiis corporis, excepturi sint aperiam officia
-          a, deserunt ducimus dolores magnam? Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Repudiandae quae doloremque deserunt
-          neque obcaecati? Ipsum iure reiciendis, laborum temporibus blanditiis
-          corporis, excepturi sint aperiam officia a, deserunt ducimus dolores
-          magnam?
+          Com habilidades em design gráfico e desenvolvimento web, podemos criar
+          designs elegantes e funcionais para seu site, aplicativo ou qualquer
+          projeto digital que você tenha em mente. Desde a criação de interfaces
+          intuitivas até a implementação de recursos avançados, estamos
+          comprometidos em entregar resultados de alta qualidade que superem suas
+          expectativas. Com atenção aos detalhes, criatividade e conhecimento
+          das últimas tendências tecnológicas.
         </p>
         <ul className="Redes">
           <li
