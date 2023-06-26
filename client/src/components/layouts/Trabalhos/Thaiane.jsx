@@ -2,13 +2,9 @@ import React from "react";
 
 import { GiMeat, GiKnifeFork } from "react-icons/gi";
 import { BiLogoFirebase } from "react-icons/bi";
-import { TbCircleLetterM } from "react-icons/tb";
-import { GrWorkshop } from "react-icons/gr";
-import { MdOutlineAttachMoney } from "react-icons/md";
-import { AiFillThunderbolt } from "react-icons/ai";
-import { FaBook } from "react-icons/fa";
 
-import { GoTasklist } from "react-icons/go";
+import { MdOutlineAttachMoney } from "react-icons/md";
+
 import { HiOutlineComputerDesktop } from "react-icons/hi2";
 import { BsEnvelopePaper, BsInstagram, BsPhone } from "react-icons/bs";
 

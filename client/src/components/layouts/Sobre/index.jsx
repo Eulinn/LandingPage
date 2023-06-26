@@ -12,7 +12,6 @@ import Thaiane from "../Trabalhos/Thaiane";
 import LuizHome from "../Trabalhos/LuizHome";
 import Layout from "../../assets/SVG/Layout";
 
-
 export default class Sobre extends React.Component {
   constructor() {
     super();
@@ -21,42 +20,31 @@ export default class Sobre extends React.Component {
     };
   }
 
-
-  ChangeStage = () =>{
-    if(this.props.Changed){
-      
-      return <LuizHome />
-
+  ChangeStage = () => {
+    if (this.props.Changed) {
+      return <LuizHome />;
     }
 
-    if(!this.state.Stage){
-      return <Trabalhos />
+    if (!this.state.Stage) {
+      return <Trabalhos />;
     }
 
-    if(this.state.Stage === 1){
-        return <Pandoo Func={this.ReturnStage} />
+    if (this.state.Stage === 1) {
+      return <Pandoo Func={this.ReturnStage} />;
     }
 
-    if(this.state.Stage === 2){
-      return <Maiara Func={this.ReturnStage} />
-
+    if (this.state.Stage === 2) {
+      return <Maiara Func={this.ReturnStage} />;
     }
 
-    if(this.state.Stage === 3){
-      return <Thaiane Func={this.ReturnStage} />
-
+    if (this.state.Stage === 3) {
+      return <Thaiane Func={this.ReturnStage} />;
     }
+  };
 
-
-  }
-
-
-  ReturnStage = async () =>{
-    await this.setState({Stage: 0})
-
-  }
-
-
+  ReturnStage = async () => {
+    await this.setState({ Stage: 0 });
+  };
 
   render() {
     return (
@@ -64,20 +52,24 @@ export default class Sobre extends React.Component {
         <div className="WorksBanner">
           <p>Com quem já trabalhei</p>
           <ul>
-            {this.props.Person?.Persons?.map((item,index) =>{
-              return <li key={index} onClick={async ()=>{
-                await this.setState({Stage: index+1})
+            {this.props.Person?.Persons?.map((item, index) => {
+              return (
+                <li
+                  key={index}
+                  onClick={async () => {
+                    await this.setState({ Stage: index + 1 });
 
-                console.log(this.state.Stage)
-
-              }}>{item}</li>
+                    console.log(this.state.Stage);
+                  }}
+                >
+                  {item}
+                </li>
+              );
             })}
           </ul>
         </div>
 
         {this.ChangeStage()}
-
-
 
         <div className="ContentSobre ColumnVideo">
           <span className="Detail Detail2"></span>
@@ -97,7 +89,9 @@ export default class Sobre extends React.Component {
                   Para acessar o {"{Nome Projeto}"} completo, use o link do
                   botão abaixo!
                 </p>
-                <button><BsGithub /> Acessar</button>
+                <button>
+                  <BsGithub /> Acessar
+                </button>
               </div>
               <div className="ScrollVideo">
                 <div className="MiniVideo"></div>
@@ -108,6 +102,15 @@ export default class Sobre extends React.Component {
                 <div className="MiniVideo"></div>
                 <div className="MiniVideo"></div>
                 <div className="MiniVideo"></div>
+              </div>
+              <div className="MobileTitle">
+                <p>
+                  Para acessar o {"{Nome Projeto}"} completo, use o link do
+                  botão abaixo!
+                </p>
+                <button>
+                  <BsGithub /> Acessar
+                </button>
               </div>
             </div>
           </div>
@@ -170,14 +173,17 @@ export default class Sobre extends React.Component {
                 </p>
               </div>
             </div>
-            
-            <div className="ItemService" style={{display:this.props.Changed ? "flex" : 'none'}}>
+
+            <div
+              className="ItemService"
+              style={{ display: this.props.Changed ? "flex" : "none" }}
+            >
               <div className="IconService">
                 <Layout />
               </div>
               <div className="ContentService">
                 <p className="ServiveTitle">
-                Templates para perfis do Instagram
+                  Templates para perfis do Instagram
                 </p>
                 <p className="ServiceText">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -188,12 +194,10 @@ export default class Sobre extends React.Component {
                 </p>
               </div>
             </div>
-
-
           </div>
         </div>
 
-        <div className="ContentSobre Carroussel" id='Depoimentos'>
+        <div className="ContentSobre Carroussel" id="Depoimentos">
           <p className="TitleGeral">
             O que as pessoas que eu já trabalhei falam de mim
           </p>
