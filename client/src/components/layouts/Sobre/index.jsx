@@ -19,6 +19,9 @@ import Karol from "../../assets/img/Karol.jpg";
 import Arduino from "../../assets/img/Arduino.png";
 import CodeSnap from "../../assets/img/CodeSnap.png";
 import Fisica from "../../assets/img/fisica.webp";
+import Crypto from "../../assets/img/Crypto.jpeg";
+import Egames from "../../assets/img/Egames.png";
+import BankApp from "../../assets/img/BankApp.jpeg";
 
 export default class Sobre extends React.Component {
   constructor() {
@@ -48,22 +51,42 @@ export default class Sobre extends React.Component {
             link: "https://github.com/Eulinn/Formulas",
           },
         ],
-        lz: [],
+        lz: [
+          {
+            title: "Crypto",
+            image: Crypto,
+            link: "https://www.figma.com/file/nxCF5Je63HRQPg2KhidH5P/Cursodefigma_start?type=design&node-id=46%3A1384&mode=design&t=rVjkpj0HIhLvyKT0-1",
+          },
+          {
+            title: "Egames",
+            image: Egames,
+            link: "https://www.figma.com/file/2TmeyeVbrE4QqOVa537UqJ/Untitled?type=design&node-id=0%3A1&mode=design&t=AERlaX48dMZ1XQA2-1",
+          },
+          {
+            title: "Bank App",
+            image: BankApp,
+            link: "https://www.figma.com/file/vRghyOPXjnJizFT7iLgZml/Untitled?type=design&node-id=102-2600&mode=design&t=VvNg5aEsWpWLKAC4-0",
+          },
+        ],
       },
     };
   }
 
   FirsImpres = () => {
     if (this.props.Changed) {
-      this.setState({ CurrentTitle: this.state.Projetos?.lz[0]?.title });
-      this.setState({ CurrentLink: this.state.Projetos?.lz[0]?.link });
-      this.setState({ CurrentImage: this.state.Projetos?.lz[0]?.image });
+      this.setState({
+        CurrentTitle: this.state.Projetos?.lz[0]?.title,
+        CurrentLink: this.state.Projetos?.lz[0]?.link,
+        CurrentImage: this.state.Projetos?.lz[0]?.image,
+      });
 
       return;
     }
-    this.setState({ CurrentTitle: this.state.Projetos?.el[0]?.title });
-    this.setState({ CurrentLink: this.state.Projetos?.el[0]?.link });
-    this.setState({ CurrentImage: this.state.Projetos?.el[0]?.image });
+    this.setState({
+      CurrentTitle: this.state.Projetos?.el[0]?.title,
+      CurrentLink: this.state.Projetos?.el[0]?.link,
+      CurrentImage: this.state.Projetos?.el[0]?.image,
+    });
   };
 
   ChangeStage = () => {
@@ -120,6 +143,7 @@ export default class Sobre extends React.Component {
   }
 
   render() {
+
     return (
       <div className="Sobre" id="Sobre">
         <div className="WorksBanner">
@@ -181,27 +205,31 @@ export default class Sobre extends React.Component {
                   ? this.state.Projetos?.lz?.map((item, index) => {
                       return (
                         <div
-                        key={index}
+                          key={index}
                           className="MiniVideo"
                           style={{ backgroundImage: `url(${item?.image})` }}
                           onClick={async () => {
-                            await this.setState({ CurrentTitle: item?.title });
-                            await this.setState({ CurrentLink: item?.link });
-                            await this.setState({ CurrentImage: item?.image });
+                            await this.setState({
+                              CurrentTitle: item?.title,
+                              CurrentLink: item?.link,
+                              CurrentImage: item?.image,
+                            });
                           }}
                         ></div>
                       );
                     })
-                  : this.state.Projetos?.el?.map((item,index) => {
+                  : this.state.Projetos?.el?.map((item, index) => {
                       return (
                         <div
                           key={index}
                           className="MiniVideo"
                           style={{ backgroundImage: `url(${item?.image})` }}
                           onClick={async () => {
-                            await this.setState({ CurrentTitle: item?.title });
-                            await this.setState({ CurrentLink: item?.link });
-                            await this.setState({ CurrentImage: item?.image });
+                            await this.setState({
+                              CurrentTitle: item?.title,
+                              CurrentLink: item?.link,
+                              CurrentImage: item?.image,
+                            });
                           }}
                         ></div>
                       );

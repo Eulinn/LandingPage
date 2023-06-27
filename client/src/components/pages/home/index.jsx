@@ -9,11 +9,14 @@ import CodeSpacing3 from "../../layouts/CodesSpacings/CodeSpacing3";
 import CodeSpacing4 from "../../layouts/CodesSpacings/CodeSpacing4";
 import Footer from "../../layouts/footer";
 
-export default class Home extends React.Component {
-  constructor() {
-    super();
+import withRouter from "../../../withRouter";
+
+
+class Home extends React.Component {
+  constructor(props) {
+    super(props);
     this.state = {
-      Changed: false,
+      Changed: this.props.params.id === 'luiz' ? true : false,
       Euler: {
         Slogan: "Os melhores scripts para suas aplicações web e desktop",
         Text: "Sou um desenvolvedor de software em constante crescimento, dedicado a aprimorar minhas habilidades de programação. Tenho expertise na criação de sites que oferecem uma experiência digital excepcional e funcionalidade eficiente. Além disso, construo aplicativos de desktop e desenvolvo scripts para automação e análise de dados, utilizando linguagens como HTML, CSS, JavaScripte frameworks como React e PyQt à PySide. Estou sempre buscando aprender e me atualizar para fornecer soluções digitais de altaqualidade, automatizando processos e maximizando a eficiência parameus clientes.",
@@ -50,6 +53,15 @@ export default class Home extends React.Component {
     );
   };
 
+  componentDidMount(){
+    if(this.props.params.id === 'luiz'){
+      this.ChangePerson(true)
+    }
+  }
+
+
+
+
   render() {
     return (
       <>
@@ -77,3 +89,6 @@ export default class Home extends React.Component {
     );
   }
 }
+
+
+export default withRouter(Home);
