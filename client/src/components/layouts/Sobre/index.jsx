@@ -169,7 +169,7 @@ export default class Sobre extends React.Component {
                   style={{ backgroundImage: `url(${this.state.CurrentImage})` }}
                 ></div>
                 <p>
-                  Para acessar o {this.state.CurrentTitle} completo, use o link
+                  Para acessar o projeto {this.state.CurrentTitle} completo, use o link
                   do botão abaixo!
                 </p>
                 <button
@@ -177,7 +177,7 @@ export default class Sobre extends React.Component {
                     window.open(this.state.CurrentLink, "_blank");
                   }}
                 >
-                  <BsGithub /> Acessar
+                  <span><BsGithub /></span> Acessar
                 </button>
               </div>
               <div className="ScrollVideo">
@@ -219,7 +219,7 @@ export default class Sobre extends React.Component {
                     window.open(this.state.CurrentLink, "_blank");
                   }}
                 >
-                  <BsGithub /> Acessar
+                  <span><BsGithub /></span> Acessar
                 </button>
               </div>
             </div>

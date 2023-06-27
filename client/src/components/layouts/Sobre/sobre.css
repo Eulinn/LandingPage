@@ -401,6 +401,15 @@
   -webkit-transition: 0.3s ease-in-out;
 }
 
+
+.LocalVideo button span, .MobileTitle button span{
+  display: flex;
+  align-items: center;
+  margin: 0 8px 0 0;
+}
+
+
+
 .LocalVideo button:hover {
   box-shadow: 0 0 14px var(--Verde);
 }
