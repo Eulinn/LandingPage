@@ -48,34 +48,28 @@ export default class Sobre extends React.Component {
             link: "https://github.com/Eulinn/Formulas",
           },
         ],
-        lz: [
-          
-        ],
+        lz: [],
       },
     };
   }
-  
-  FirsImpres = () =>{
+
+  FirsImpres = () => {
     if (this.props.Changed) {
       this.setState({ CurrentTitle: this.state.Projetos?.lz[0]?.title });
       this.setState({ CurrentLink: this.state.Projetos?.lz[0]?.link });
       this.setState({ CurrentImage: this.state.Projetos?.lz[0]?.image });
 
-      return
+      return;
     }
     this.setState({ CurrentTitle: this.state.Projetos?.el[0]?.title });
     this.setState({ CurrentLink: this.state.Projetos?.el[0]?.link });
     this.setState({ CurrentImage: this.state.Projetos?.el[0]?.image });
-  }
-
-
+  };
 
   ChangeStage = () => {
     if (this.props.Changed) {
-
       return <LuizHome />;
     }
-
 
     if (!this.state.Stage) {
       return <Trabalhos />;
@@ -122,8 +116,7 @@ export default class Sobre extends React.Component {
       await this.setState({ CarrousesselTablet: false });
     });
 
-      this.FirsImpres();
-    
+    this.FirsImpres();
   }
 
   render() {
@@ -169,22 +162,26 @@ export default class Sobre extends React.Component {
                   style={{ backgroundImage: `url(${this.state.CurrentImage})` }}
                 ></div>
                 <p>
-                  Para acessar o projeto {this.state.CurrentTitle} completo, use o link
-                  do botão abaixo!
+                  Para acessar o projeto {this.state.CurrentTitle} completo, use
+                  o link do botão abaixo!
                 </p>
                 <button
                   onClick={() => {
                     window.open(this.state.CurrentLink, "_blank");
                   }}
                 >
-                  <span><BsGithub /></span> Acessar
+                  <span>
+                    <BsGithub />
+                  </span>{" "}
+                  Acessar
                 </button>
               </div>
               <div className="ScrollVideo">
                 {this.props.Changed
-                  ? this.state.Projetos?.lz?.map((item) => {
+                  ? this.state.Projetos?.lz?.map((item, index) => {
                       return (
                         <div
+                        key={index}
                           className="MiniVideo"
                           style={{ backgroundImage: `url(${item?.image})` }}
                           onClick={async () => {
@@ -195,9 +192,10 @@ export default class Sobre extends React.Component {
                         ></div>
                       );
                     })
-                  : this.state.Projetos?.el?.map((item) => {
+                  : this.state.Projetos?.el?.map((item,index) => {
                       return (
                         <div
+                          key={index}
                           className="MiniVideo"
                           style={{ backgroundImage: `url(${item?.image})` }}
                           onClick={async () => {
@@ -219,7 +217,10 @@ export default class Sobre extends React.Component {
                     window.open(this.state.CurrentLink, "_blank");
                   }}
                 >
-                  <span><BsGithub /></span> Acessar
+                  <span>
+                    <BsGithub />
+                  </span>{" "}
+                  Acessar
                 </button>
               </div>
             </div>
@@ -323,7 +324,11 @@ export default class Sobre extends React.Component {
           ) : null}
         </div>
 
-        <div className="ContentSobre Carroussel" id="Depoimentos" style={{display:'none'}}>
+        <div
+          className="ContentSobre Carroussel"
+          id="Depoimentos"
+          style={{ display: "none" }}
+        >
           <p className="TitleGeral">
             O que as pessoas que eu já trabalhei falam de mim
           </p>
@@ -363,7 +368,7 @@ export default class Sobre extends React.Component {
               </div>
             </div>
 
-            <div className="ItemSlider" >
+            <div className="ItemSlider">
               <div className="WhatsIcons">
                 <span className="WhatsIcon">
                   <RiWhatsappFill />

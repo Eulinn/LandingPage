@@ -58,25 +58,27 @@ export default class Banner extends react.Component {
                   <span>{"<"}</span>
                 </div>
               </button>
-              <button
-                className="Button2"
-                onClick={() => {
-                  this.props.Changed
-                    ? window.open(
-                        "https://www.behance.net/luizvidal5",
-                        "_blank"
-                      )
-                    : window.open(
-                        "https://eulinn.github.io/portfolio/",
-                        "_blank"
-                      );
-                }}
-              >
-                Portfólio
-              </button>
-              <a href="#Depoimentos">
-                <button className="Button3">Depoimentos</button>
-              </a>
+              <div className="ButtonsLinks">
+                <button
+                  className="Button2"
+                  onClick={() => {
+                    this.props.Changed
+                      ? window.open(
+                          "https://www.behance.net/luizvidal5",
+                          "_blank"
+                        )
+                      : window.open(
+                          "https://eulinn.github.io/portfolio/",
+                          "_blank"
+                        );
+                  }}
+                >
+                  Portfólio
+                </button>
+                <a href="#Depoimentos">
+                  <button className="Button3">Depoimentos</button>
+                </a>
+              </div>
             </div>
           </div>
           <div className="ImagesBanner">

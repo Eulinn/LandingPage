@@ -46,11 +46,11 @@ export default class Header extends react.Component {
           </button>
         </div>
 
-        <div className="MobileMenu">
+        {/* <div className="MobileMenu">
           <p>
             <LuAlignJustify />
           </p>
-        </div>
+        </div> */}
       </div>
     );
   }
