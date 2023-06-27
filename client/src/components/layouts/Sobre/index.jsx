@@ -1,6 +1,6 @@
 import React from "react";
 import "./sobre.css";
-import Carroussel from "../carroussel";
+
 
 import { BsPersonFill, BsGithub } from "react-icons/bs";
 import { BiBuildings } from "react-icons/bi";
@@ -13,15 +13,13 @@ import LuizHome from "../Trabalhos/LuizHome";
 import Layout from "../../assets/SVG/Layout";
 import ServiceCarrossel from "../ServicesCarrossel";
 
-import { RiWhatsappFill } from "react-icons/ri";
-import Karol from "../../assets/img/Karol.jpg";
-
 import Arduino from "../../assets/img/Arduino.png";
 import CodeSnap from "../../assets/img/CodeSnap.png";
 import Fisica from "../../assets/img/fisica.webp";
 import Crypto from "../../assets/img/Crypto.jpeg";
 import Egames from "../../assets/img/Egames.png";
 import BankApp from "../../assets/img/BankApp.jpeg";
+import Coments from "../coments";
 
 export default class Sobre extends React.Component {
   constructor() {
@@ -352,87 +350,8 @@ export default class Sobre extends React.Component {
           ) : null}
         </div>
 
-        <div
-          className="ContentSobre Carroussel"
-          id="Depoimentos"
-          style={{ display: "none" }}
-        >
-          <p className="TitleGeral">
-            O que as pessoas que eu já trabalhei falam de mim
-          </p>
-
-          <Carroussel />
-
-          <div className="ContainerFeedbacks">
-            <div className="ItemSlider">
-              <div className="WhatsIcons">
-                <span className="WhatsIcon">
-                  <RiWhatsappFill />
-                </span>
-              </div>
-              <div className="PerfilSlider">
-                <div
-                  className="PhotoPerfilSlider"
-                  style={{ backgroundImage: `url(${Karol})` }}
-                ></div>
-                <div className="ContentPerfilSlider">
-                  <p className="NamePerfilSlider">Karolayne Campos</p>
-                  <p className="CargoPerfilSlider">Estudante</p>
-                </div>
-              </div>
-
-              <div className="Feedback">
-                Fiquei impressionada com a capacidade de resolver problemas
-                complexos de uma forma tão ágil e eficiente, demonstrando que
-                realmente domina o que faz, assim como, um alto nível de
-                profissionalismo e comprometimento. Além do mais, sempre cumpriu
-                os prazos estabelecidos, entregando um trabalho de alta
-                qualidade dentro do tempo previsto e sempre me consultando para
-                saber se eu estava gostando ou não. A dedicação do programador
-                em adquirir novas habilidades e estar atualizado com as últimas
-                tendências tecnológicas é admirável. Sua busca contínua pelo
-                aprimoramento pessoal e profissional reflete em seu trabalho de
-                qualidade.
-              </div>
-            </div>
-
-            <div className="ItemSlider">
-              <div className="WhatsIcons">
-                <span className="WhatsIcon">
-                  <RiWhatsappFill />
-                </span>
-              </div>
-              <div className="PerfilSlider">
-                <div
-                  className="PhotoPerfilSlider"
-                  style={{ backgroundImage: `url(${Karol})` }}
-                ></div>
-                <div className="ContentPerfilSlider">
-                  <p className="NamePerfilSlider">Karolayne Campos</p>
-                  <p className="CargoPerfilSlider">Estudante</p>
-                </div>
-              </div>
-
-              <div className="Feedback">
-                Fiquei impressionada com a capacidade de resolver problemas
-                complexos de uma forma tão ágil e eficiente, demonstrando que
-                realmente domina o que faz, assim como, um alto nível de
-                profissionalismo e comprometimento. Além do mais, sempre cumpriu
-                os prazos estabelecidos, entregando um trabalho de alta
-                qualidade dentro do tempo previsto e sempre me consultando para
-                saber se eu estava gostando ou não. A dedicação do programador
-                em adquirir novas habilidades e estar atualizado com as últimas
-                tendências tecnológicas é admirável. Sua busca contínua pelo
-                aprimoramento pessoal e profissional reflete em seu trabalho de
-                qualidade.
-              </div>
-            </div>
-
-            <div className="ReturnHome">
-              <button>Carregar Mais...</button>
-            </div>
-          </div>
-        </div>
+          <Coments Changed ={this.props.Changed} />
+        
       </div>
     );
   }

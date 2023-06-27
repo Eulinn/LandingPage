@@ -463,6 +463,14 @@
     .Button1Mobile{
         display: flex;
     }
+
+
+    .Line1, .Line2{
+        display: none;
+    }
+
+
+
 }
 
 
