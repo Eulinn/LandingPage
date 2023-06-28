@@ -13,6 +13,8 @@ import LuizHome from "../Trabalhos/LuizHome";
 import Layout from "../../assets/SVG/Layout";
 import ServiceCarrossel from "../ServicesCarrossel";
 
+import Figma from "../../assets/SVG/Figma";
+
 import Arduino from "../../assets/img/Arduino.png";
 import CodeSnap from "../../assets/img/CodeSnap.png";
 import Fisica from "../../assets/img/fisica.webp";
@@ -193,7 +195,7 @@ export default class Sobre extends React.Component {
                   }}
                 >
                   <span>
-                    <BsGithub />
+                  {this.props.Changed ? <Figma color='#fff' squad='35'/> : <BsGithub />}
                   </span>{" "}
                   Acessar
                 </button>
@@ -244,7 +246,7 @@ export default class Sobre extends React.Component {
                   }}
                 >
                   <span>
-                    <BsGithub />
+                    {this.props.Changed ? <Figma color='#fff' squad='30' /> : <BsGithub />}
                   </span>{" "}
                   Acessar
                 </button>

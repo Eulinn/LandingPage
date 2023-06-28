@@ -13,14 +13,13 @@ import Colorama from "../../assets/SVG/Colorama";
 import Door from "../../assets/SVG/Door";
 
 
-
 export default class LuizHome extends React.Component {
   constructor() {
     super();
     this.state = {
       Home: [
         {
-          Icons: [<XD />, <ID />, <Figma />],
+          Icons: [<XD />, <ID />, <Figma color='#1f1f1f' squad='87' />],
           Title: "Grande experiencia com cores e tipografia",
           Text: "Gostaria de ressaltar minha habilidade em trabalhar com cores e tipografia, que considero de alto padrão. Tenho um olhar apurado para combinações de cores harmoniosas e escolho cuidadosamente as fontes e o espaçamento adequado para criar designs impactantes e visualmente atraentes.",
           Tags: [<A />, <Colorama />],
