@@ -22,7 +22,7 @@ class Home extends React.Component {
         Text: "Sou um desenvolvedor de software em constante crescimento, dedicado a aprimorar minhas habilidades de programação. Tenho expertise na criação de sites que oferecem uma experiência digital excepcional e funcionalidade eficiente. Além disso, construo aplicativos de desktop e desenvolvo scripts para automação e análise de dados, utilizando linguagens como HTML, CSS, JavaScripte frameworks como React e PyQt à PySide. Estou sempre buscando aprender e me atualizar para fornecer soluções digitais de altaqualidade, automatizando processos e maximizando a eficiência parameus clientes.",
         ToChangeText: "Conheça mais de design",
         CodeSpacings: [<CodeSpacing1 />, <CodeSpacing2 />],
-        Persons: ["Pandoo", "Mb Consultorias", "Tatá Alimentos"],
+        Persons: ["Pandoo", "Mb", "Tatá"],
       },
 
       Luiz: {

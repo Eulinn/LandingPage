@@ -43,6 +43,11 @@
   font-weight: 700;
   color: white;
   opacity: 0.3;
+  text-align: center;
+
+
+  display: flex;
+  align-items: center;
 
   cursor: pointer;
 
@@ -761,7 +766,6 @@
 @media screen and (max-width:490px){
   .WorksBanner ul li{
     font-size: 1.7em;
-    margin: 0 10px;
   }
   
 }
