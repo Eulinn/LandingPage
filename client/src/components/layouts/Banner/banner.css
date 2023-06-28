@@ -298,8 +298,8 @@
 
 .CodeSpacing{
     position: relative;
-    width: clamp(360px,80%, 700px);
-    min-height: 200px;
+    width: clamp(360px,90%, 700px);
+    min-height: 150px;
     margin: 20px 0;
     padding: 5px 0;
 
